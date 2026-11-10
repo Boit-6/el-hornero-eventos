@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Paleta de la marca: negro y dorado, con marfil para el texto. */
+@theme {
+  --color-night: #0b0a08;
+  --color-coal: #151310;
+  --color-line: #2f2a1f;
+  --color-ivory: #f4eee0;
+  --color-muted: #a59c88;
+  --color-gold: #c9a24b;
+  --color-gold-bright: #e6c670;
+  --color-gold-dim: #2b2413;
+  --color-ok: #9ccf85;
+  --color-danger: #ff9486;
+
+  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-montserrat);
+}
+
+:root {
+  /* Hace que los controles nativos (calendario, select) usen su versión oscura. */
+  color-scheme: dark;
+  /* Deja lugar para el header fijo al saltar a un ancla o enfocar un campo con el teclado. */
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--color-night);
+  color: var(--color-ivory);
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Evita el zoom automático de iOS al enfocar campos (inputs < 16px). */
+input,
+select,
+textarea {
+  font-size: 16px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
